@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl all pages
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /gallery.html
+Allow: /contact.html
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Disallow crawling of sensitive areas
+Disallow: /api/
+Disallow: /env.example
+Disallow: /package.json
+Disallow: /server.js
+Disallow: /vercel.json
+
+# Sitemap location (add when you create one)
+# Sitemap: https://bbcustomtile.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overloading server)
+Crawl-delay: 1

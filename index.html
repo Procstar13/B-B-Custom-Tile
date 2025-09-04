@@ -28,9 +28,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" as="image">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -102,7 +108,10 @@
         <div class="hero-background">
             <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                  alt="Beautiful tile installation in modern bathroom" 
-                 loading="eager">
+                 loading="eager"
+                 fetchpriority="high"
+                 width="2070"
+                 height="1380">
         </div>
         <div class="hero-overlay">
             <div class="container">
@@ -211,15 +220,15 @@
                     
                     <div class="stats-grid">
                         <div class="stat">
-                            <h4>15+</h4>
+                            <h3>15+</h3>
                             <p>Years Experience</p>
                         </div>
                         <div class="stat">
-                            <h4>2,500+</h4>
+                            <h3>2,500+</h3>
                             <p>Projects Completed</p>
                         </div>
                         <div class="stat">
-                            <h4>100%</h4>
+                            <h3>100%</h3>
                             <p>Customer Satisfaction</p>
                         </div>
                     </div>
@@ -305,19 +314,19 @@
             <h2 class="section-title">Licensed & Insured</h2>
             <div class="cert-grid">
                 <div class="cert-item">
-                    <h4>Licensed Contractor</h4>
+                    <h3>Licensed Contractor</h3>
                     <p>Arizona State License #12345</p>
                 </div>
                 <div class="cert-item">
-                    <h4>Fully Insured</h4>
+                    <h3>Fully Insured</h3>
                     <p>General Liability & Workers' Compensation</p>
                 </div>
                 <div class="cert-item">
-                    <h4>Bonded</h4>
+                    <h3>Bonded</h3>
                     <p>Performance Bond for Your Protection</p>
                 </div>
                 <div class="cert-item">
-                    <h4>BBB A+ Rating</h4>
+                    <h3>BBB A+ Rating</h3>
                     <p>Better Business Bureau Accredited</p>
                 </div>
             </div>
@@ -335,26 +344,26 @@
                     
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <h4>📞 Phone</h4>
+                            <h3>📞 Phone</h3>
                             <p><a href="tel:+15551234567">(555) 123-4567</a></p>
                             <small>Mon-Fri: 8:00 AM - 5:00 PM</small>
                         </div>
                         
                         <div class="contact-method">
-                            <h4>✉️ Email</h4>
+                            <h3>✉️ Email</h3>
                             <p><a href="mailto:info@bbcustomtile.com">info@bbcustomtile.com</a></p>
                             <small>We respond within 24 hours</small>
                         </div>
                         
                         <div class="contact-method">
-                            <h4>📍 Address</h4>
+                            <h3>📍 Address</h3>
                             <p>123 Desert View Dr<br>Phoenix, AZ 85001</p>
                             <small>Serving all of Arizona</small>
                         </div>
                     </div>
 
                     <div class="business-hours">
-                        <h4>Business Hours</h4>
+                        <h3>Business Hours</h3>
                         <ul>
                             <li><strong>Monday - Friday:</strong> 8:00 AM - 5:00 PM</li>
                             <li><strong>Saturday:</strong> 9:00 AM - 3:00 PM</li>
@@ -416,13 +425,13 @@
                     <h3>B&B Custom Tile</h3>
                     <p>Professional tile installation services across Arizona. Quality craftsmanship you can trust.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">Facebook</a>
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="Google My Business">Google</a>
+                        <a href="#" aria-label="Visit our Facebook page">Facebook</a>
+                        <a href="#" aria-label="Follow us on Instagram">Instagram</a>
+                        <a href="#" aria-label="View our Google My Business profile">Google</a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h3>Services</h3>
                     <ul>
                         <li><a href="services.html#bathroom">Bathroom Tile</a></li>
                         <li><a href="services.html#kitchen">Kitchen Tile</a></li>
@@ -431,7 +440,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h3>Company</h3>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
@@ -440,7 +449,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Contact Info</h4>
+                    <h3>Contact Info</h3>
                     <p>123 Desert View Dr<br>Phoenix, AZ 85001</p>
                     <p>Phone: (555) 123-4567</p>
                     <p>Email: info@bbcustomtile.com</p>
