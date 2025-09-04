@@ -619,6 +619,16 @@ h6 { font-size: 1.125rem; }
         gap: 1rem;
     }
 
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
