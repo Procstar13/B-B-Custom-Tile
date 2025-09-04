@@ -614,8 +614,22 @@ h6 { font-size: 1.125rem; }
         gap: 2rem;
     }
     
+    .about-text {
+        order: 1;
+    }
+    
+    .about-image {
+        order: 2;
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+    }
+    
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
     }
 
