@@ -1,0 +1,37 @@
+{
+  "name": "bb-custom-tile",
+  "version": "1.0.0",
+  "description": "B&B Custom Tile - Professional tile installation services in Arizona",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "tile",
+    "installation",
+    "arizona",
+    "contractor",
+    "bathroom",
+    "kitchen"
+  ],
+  "author": "B&B Custom Tile",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "dotenv": "^16.3.1",
+    "resend": "^2.1.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
