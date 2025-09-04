@@ -629,7 +629,7 @@ h6 { font-size: 1.125rem; }
     }
     
     .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
