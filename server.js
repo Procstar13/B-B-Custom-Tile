@@ -6,6 +6,28 @@ const { body, validationResult } = require('express-validator');
 const path = require('path');
 require('dotenv').config();
 
+// Logging utility
+const isDevelopment = process.env.NODE_ENV === 'development';
+
+const logger = {
+    info: (message, data = {}) => {
+        if (isDevelopment) {
+            console.log(`[INFO] ${message}`, data);
+        } else {
+            console.log(`[INFO] ${message}`);
+        }
+    },
+    error: (message, error) => {
+        console.error(`[ERROR] ${message}`, {
+            message: error?.message || 'Unknown error',
+            stack: isDevelopment ? error?.stack : undefined
+        });
+    },
+    warn: (message, data = {}) => {
+        console.warn(`[WARN] ${message}`, isDevelopment ? data : '');
+    }
+};
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -84,17 +106,12 @@ app.post('/api/contact', contactLimiter, contactValidation, async (req, res) => 
         const { name, email, phone, address, service, projectSize, timeline, message, newsletter } = req.body;
 
         // In a real application, you would send the email here using Resend
-        // For now, we'll just log the data and return success
-        console.log('Contact form submission:', {
-            name,
-            email,
-            phone,
-            address,
-            service,
-            projectSize,
-            timeline,
-            message,
-            newsletter: newsletter === 'on'
+        // For now, we'll just log sanitized data and return success
+        logger.info('Contact form submission received', {
+            service: service,
+            projectSize: projectSize,
+            timeline: timeline,
+            timestamp: new Date().toISOString()
         });
 
         // Simulate email sending delay
@@ -106,7 +123,7 @@ app.post('/api/contact', contactLimiter, contactValidation, async (req, res) => 
         });
 
     } catch (error) {
-        console.error('Contact form error:', error);
+        logger.error('Contact form processing error', error);
         res.status(500).json({
             success: false,
             message: 'An error occurred while processing your request. Please try again later.'
@@ -151,7 +168,7 @@ app.use((req, res) => {
 
 // Error handler
 app.use((err, req, res, next) => {
-    console.error('Server error:', err);
+    logger.error('Server error occurred', err);
     res.status(500).json({
         success: false,
         message: 'Internal server error'
@@ -160,8 +177,12 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`B&B Custom Tile server running on port ${PORT}`);
-    console.log(`Visit: http://localhost:${PORT}`);
+    if (isDevelopment) {
+        logger.info(`B&B Custom Tile server running on port ${PORT}`);
+        logger.info(`Visit: http://localhost:${PORT}`);
+    } else {
+        logger.info('B&B Custom Tile server started successfully');
+    }
 });
 
 module.exports = app;
