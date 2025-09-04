@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "echo 'No build process needed for static site'",
+    "build": "echo 'Static site - no build process needed'",
+    "vercel-build": "echo 'Vercel build complete'",
     "test": "echo 'No tests specified'"
   },
   "keywords": [
